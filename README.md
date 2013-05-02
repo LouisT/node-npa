@@ -1,4 +1,4 @@
-NPA (v0.1.0)
+NPA (v0.1.1)
 ======
 
 Install: npm install npa

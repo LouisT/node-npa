@@ -1,5 +1,5 @@
 /*
-  NPA (NATO phonetic alphabet) - v0.1.0 - Node.js & Browser
+  NPA (NATO phonetic alphabet) - v0.1.1 - Node.js & Browser
   By Louis T. <louist@ltdev.im>
   https://github.com/LouisT/node-npa/
   https://en.wikipedia.org/wiki/NATO_phonetic_alphabet
@@ -26,16 +26,9 @@
           };
   };
   NPA.prototype.__ucfirst  = function (str) {
-          var sentences = String(str).match(/[^\s]([^\.\?\!]+)[^\s]/g),
-              fixes = sentences.map(function (sentence) {
-                     return sentence.replace(/^./gi,function(char) {
-                            return char.toUpperCase();
-                     });
-              });
-          for (var fix in fixes) {
-              str = str.replace(sentences[fix],fixes[fix]);
-          };
-          return str;
+          return str.replace(/(\w)(.[^\.\?\!]+\w)/g,function (a,b,c) {
+                 return b.toUpperCase()+c;
+          });
   };
   NPA.prototype.__buildMorse = function () {
           if (!('morse' in this)) {
@@ -48,12 +41,11 @@
           };
           return (!!Object.keys(this.morse).length?this.morse:false);
   };
-  NPA.prototype.__runner = function (str,mode,sep) {
+  NPA.prototype.__runner = function (str,mode) {
           var str = String(str).toLowerCase(),
-              sep = sep||'-';
           switch (mode) {
                  case 2:
-                      var spaces = str.split(sep),
+                      var spaces = str.split('-'),
                           ret = [];
                       for (var num in spaces) {
                           var piece = [], 
@@ -97,7 +89,7 @@
                           });
                           ret.push(piece.join((mode===1?' ':',')));
                       };
-                      return ret.join((mode===1?'  ':sep));
+                      return ret.join((mode===1?'  ':'-'));
           };
   };
   NPA.prototype.toMorse = function (str) {
@@ -106,11 +98,11 @@
   NPA.prototype.fromMorse = function (str) {
           return this.__runner(str,3);
   };
-  NPA.prototype.toNPA = function (str,sep) {
-          return this.__runner(str,0,sep);
+  NPA.prototype.toNPA = function (str) {
+          return this.__runner(str,0);
   };
-  NPA.prototype.fromNPA = function (str,sep) {
-          return this.__runner(str,2,sep);
+  NPA.prototype.fromNPA = function (str) {
+          return this.__runner(str,2);
   };
   Setup(NPA);
 })((typeof exports!=='undefined'?function(fn){module.exports=fn;}:function(fn){this['NPA']=fn();}));
