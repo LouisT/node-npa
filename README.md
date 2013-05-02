@@ -11,7 +11,7 @@ Information:
 ------
 Well, the wiki article probably says enough. Find it [here](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet "Title").
 
-    NOTE: This was for just for fun. Inspired by "Foxtrot Uniform Charlie Kilo" - Bloodhound Gang.
+    NOTE: This was just for fun. Inspired by "Foxtrot Uniform Charlie Kilo" - Bloodhound Gang.
 
 Usage:
 ------
