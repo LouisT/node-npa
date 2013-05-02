@@ -42,7 +42,7 @@
           return (!!Object.keys(this.morse).length?this.morse:false);
   };
   NPA.prototype.__runner = function (str,mode) {
-          var str = String(str).toLowerCase(),
+          var str = String(str).toLowerCase();
           switch (mode) {
                  case 2:
                       var spaces = str.split('-'),
