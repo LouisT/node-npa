@@ -1,0 +1,29 @@
+{
+    "name": "npa",
+    "version": "0.1.0",
+    "author": {
+        "name": "Louis T.",
+        "email": "louist@ltdev.im",
+        "url": "http://github.com/LouisT/node-npa"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/LouisT/node-npa.git"
+    },
+    "licenses": [
+        {
+          "type": "unlicensed",
+          "url": "http://unlicense.org/"
+        }
+    ],
+    "keywords": [
+        "npa",
+        "NATO",
+        "phonetic",
+        "alphabet",
+        "morse"
+    ],
+    "description": "Convert strings of text to/from NATO phonetic alphabet and morse code.",
+    "engine": "node => 0.6",
+    "main": "index.js"
+}
