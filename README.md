@@ -47,3 +47,7 @@ Usage:
           alert('(toNPA) '+string+':\n '+npa+'\n\n');
           alert('(fromNPA) '+npa+':\n '+NPA.fromNPA(npa)+'\n\n');
        </script>
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/LouisT/node-npa/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
